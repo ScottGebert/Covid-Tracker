@@ -1,0 +1,26 @@
+
+  <mat-expansion-panel matColor="accent" class="Filters">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filters
+      </mat-panel-title>
+      <mat-panel-description>
+        Click to expand various filter options
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+
+<div *ngFor="let item of todayStats.cases">
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{item.province}}</mat-card-title>
+      <mat-card-subtitle>Todays Cases: {{item.cases}}</mat-card-subtitle>
+      <!-- <img mat-card-sm-image src="https://media.nomadicmatt.com/2020/alberta1a.jpg" > -->
+      <button style="height: 35px;" mat-raised-button color="accent">View Statistics</button>
+    </mat-card-title-group>
+    <mat-card-content>
+      <span>Cumualtive Cases: {{item.cumulative_cases}}</span>
+    </mat-card-content>
+  </mat-card>
+</div>
