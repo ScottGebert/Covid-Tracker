@@ -1,1 +1,39 @@
-<p>province-page works!</p>
+
+<div class="Content"> 
+  <div fxLayout="row wrap" fxLayoutGap="grid">
+    <h3 fxFlex="70%" fxFlex.xs="100%" >Province of {{province}} Covid-19 Statistics Page</h3>
+    <button (click)="routeHome()" class="button" mat-raised-button color="primary">Return To Province view</button>
+
+  </div>
+
+  <mat-divider style="margin: 20px 0px 20px 0px;"></mat-divider>
+
+  <div fxLayout="row wrap" fxLayoutGap="10px grid">
+      <mat-card fxFlex="50%" fxFlex.xs="100%"  class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>Cases</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Cumualtive Cases:</span>
+        </mat-card-content>
+      </mat-card>
+      <mat-card fxFlex="50%" fxFlex.xs="100%"  class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>Vaccines</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Cumualtive Cases:</span>
+        </mat-card-content>
+      </mat-card>
+      <mat-card fxFlex="50%" fxFlex.xs="100%" class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>Graph</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Cumualtive Cases:</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+</div>

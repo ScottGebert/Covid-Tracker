@@ -26,7 +26,7 @@
         <mat-card-title-group>
           <mat-card-title>{{item.province}}</mat-card-title>
           <mat-card-subtitle>Todays Cases: {{item.cases}}</mat-card-subtitle>
-          <button style="height: 35px;" mat-raised-button color="primary">View Statistics</button>
+          <button (click)="route(item.province)" style="height: 35px;" mat-raised-button color="primary">View Statistics</button>
         </mat-card-title-group>
         <mat-card-content>
           <span>Cumualtive Cases: {{item.cumulative_cases}}</span>

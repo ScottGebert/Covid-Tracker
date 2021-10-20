@@ -16,6 +16,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { ProvincePageComponent } from './province-page/province-page.component';
 import { FormBuilder  } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatButtonModule,
     FlexLayoutModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule
     ],
   providers: [],
   bootstrap: [AppComponent]

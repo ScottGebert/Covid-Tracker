@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../services/statistics.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MainpageComponent implements OnInit {
 
   constructor(
     private statsService: StatisticsService,
-
+    private router: Router
   ) { }
 
  
@@ -41,6 +42,11 @@ export class MainpageComponent implements OnInit {
     }
     console.log(this.todayStatsFiltered);
     console.log(this.todayStats)
+  }
+
+  route(province: string) {
+    console.log("fired");
+    this.router.navigate(['province-page/' + province])
   }
 
 }
