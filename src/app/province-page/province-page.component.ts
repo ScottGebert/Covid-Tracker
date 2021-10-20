@@ -9,13 +9,21 @@ import { StatisticsService } from '../services/statistics.service';
 })
 export class ProvincePageComponent implements OnInit {
   province: string = "";
+  provinceWideStats: any ={};
+  healthZoneStats:any = {};
+
   constructor(
     private statsService: StatisticsService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.province = this.router.url.substring(this.router.url.lastIndexOf("/") + 1, this.router.url.length);
+    this.province = this.router.url.substring(this.router.url.lastIndexOf("/") + 1, this.router.url.length).replace("%20", " ");
+    this.provinceWideStats = this.statsService.getCovidStatsForProvince(this.province).subscribe(resp => {
+      this.provinceWideStats = resp.summary.at(0);
+      console.log(resp);
+    });
+    this.healthZoneStats = this.statsService.getCovidStatsForZones(this.province);
   }
 
   routeHome() {

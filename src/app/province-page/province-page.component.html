@@ -1,39 +1,70 @@
-
-<div class="Content"> 
+<div class="Content">
   <div fxLayout="row wrap" fxLayoutGap="grid">
-    <h3 fxFlex="70%" fxFlex.xs="100%" >Province of {{province}} Covid-19 Statistics Page</h3>
+    <h3 fxFlex="70%" fxFlex.xs="100%">Province of {{province}} Covid-19 Statistics Page</h3>
     <button (click)="routeHome()" class="button" mat-raised-button color="primary">Return To Province view</button>
 
   </div>
 
   <mat-divider style="margin: 20px 0px 20px 0px;"></mat-divider>
-
+  <h3>Case Data - Province Wide</h3>
   <div fxLayout="row wrap" fxLayoutGap="10px grid">
-      <mat-card fxFlex="50%" fxFlex.xs="100%"  class="mat-elevation-z4">
+    <div fxFlex="50%" fxFlex.xs="100%">
+      <mat-card class="mat-elevation-z4">
         <mat-card-title-group>
           <mat-card-title>Cases</mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
-          <span>Cumualtive Cases:</span>
-        </mat-card-content>
-      </mat-card>
-      <mat-card fxFlex="50%" fxFlex.xs="100%"  class="mat-elevation-z4">
-        <mat-card-title-group>
-          <mat-card-title>Vaccines</mat-card-title>
-        </mat-card-title-group>
-        <mat-card-content>
-          <span>Cumualtive Cases:</span>
-        </mat-card-content>
-      </mat-card>
-      <mat-card fxFlex="50%" fxFlex.xs="100%" class="mat-elevation-z4">
-        <mat-card-title-group>
-          <mat-card-title>Graph</mat-card-title>
-        </mat-card-title-group>
-        <mat-card-content>
-          <span>Cumualtive Cases:</span>
+          <span>Cumualtive Cases: {{provinceWideStats.cumulative_cases}} </span>  <br>
+          <span>Latest Cases: {{provinceWideStats.cases}}</span><br>
+          <span>Active Cases: {{provinceWideStats.active_cases}} </span>  <br>
+          <span>Active Cases Change: {{provinceWideStats.active_cases_change}} </span>  <br>       
+          <span>Recovered: {{provinceWideStats.cumulative_recovered}} </span>  <br>       
         </mat-card-content>
       </mat-card>
     </div>
 
+    <div fxFlex="50%" fxFlex.xs="100%">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>Deaths</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Cumualtive Deaths: {{provinceWideStats.cumulative_deaths}}</span> <br>
+          <span>Latest Deaths: {{provinceWideStats.deaths}}</span><br>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div fxFlex="50%" fxFlex.xs="100%">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>Vaccine</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Fully Vaccinated: {{provinceWideStats.cumulative_cvaccine}}</span> <br>
+          <span>Doses Administered - Today: {{provinceWideStats.avaccine}}</span><br>
+          <span>Doses Administered - Total: {{provinceWideStats.cumulative_avaccine}}</span><br>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </div>
+
+
+  <h3>Case Data - Health Regions</h3>
+  <div fxLayout="row wrap" fxLayoutGap="10px grid">
+    <div fxFlex="33%" fxFlex.xs="100%" *ngFor="let item of healthZoneStats">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-title-group>
+          <mat-card-title>{{item.health_region}} </mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <span>Cumualtive Cases: {{item.cumulative_cases}}</span> <br>
+          <span>Cumualtive Deaths: {{item.cumulative_deaths}}</span> <br>
+          <span>Latest Cases: {{item.cases}}</span><br>
+          <span>Latest Deaths: {{item.deaths}}</span><br>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 
 </div>
