@@ -14,11 +14,11 @@
           <mat-card-title>Cases</mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
-          <span>Cumualtive Cases: {{provinceWideStats.cumulative_cases}} </span>  <br>
-          <span>Latest Cases: {{provinceWideStats.cases}}</span><br>
-          <span>Active Cases: {{provinceWideStats.active_cases}} </span>  <br>
-          <span>Active Cases Change: {{provinceWideStats.active_cases_change}} </span>  <br>       
-          <span>Recovered: {{provinceWideStats.cumulative_recovered}} </span>  <br>       
+          <span>Cumualtive Cases: {{provinceWideStats.cumulative_cases.toLocaleString()}} </span> <br>
+          <span>Latest Cases: {{provinceWideStats.cases.toLocaleString()}}</span><br>
+          <span>Active Cases: {{provinceWideStats.active_cases.toLocaleString()}} </span> <br>
+          <span>Active Cases Change: {{provinceWideStats.active_cases_change.toLocaleString()}} </span> <br>
+          <span>Recovered: {{provinceWideStats.cumulative_recovered.toLocaleString()}} </span> <br>
         </mat-card-content>
       </mat-card>
     </div>
@@ -29,8 +29,8 @@
           <mat-card-title>Deaths</mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
-          <span>Cumualtive Deaths: {{provinceWideStats.cumulative_deaths}}</span> <br>
-          <span>Latest Deaths: {{provinceWideStats.deaths}}</span><br>
+          <span>Cumualtive Deaths: {{provinceWideStats.cumulative_deaths.toLocaleString()}}</span> <br>
+          <span>Latest Deaths: {{provinceWideStats.deaths.toLocaleString()}}</span><br>
         </mat-card-content>
       </mat-card>
     </div>
@@ -41,13 +41,13 @@
           <mat-card-title>Vaccine</mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
-          <span>Fully Vaccinated: {{provinceWideStats.cumulative_cvaccine}}</span> <br>
-          <span>Doses Administered - Today: {{provinceWideStats.avaccine}}</span><br>
-          <span>Doses Administered - Total: {{provinceWideStats.cumulative_avaccine}}</span><br>
+          <span>Fully Vaccinated: {{provinceWideStats.cumulative_cvaccine.toLocaleString()}}</span> <br>
+          <span>Doses Administered - Today: {{provinceWideStats.avaccine.toLocaleString()}}</span><br>
+          <span>Doses Administered - Total: {{provinceWideStats.cumulative_avaccine.toLocaleString()}}</span><br>
         </mat-card-content>
       </mat-card>
     </div>
-    </div>
+  </div>
 
 
   <h3>Case Data - Health Regions</h3>
@@ -58,10 +58,10 @@
           <mat-card-title>{{item.health_region}} </mat-card-title>
         </mat-card-title-group>
         <mat-card-content>
-          <span>Cumualtive Cases: {{item.cumulative_cases}}</span> <br>
-          <span>Cumualtive Deaths: {{item.cumulative_deaths}}</span> <br>
-          <span>Latest Cases: {{item.cases}}</span><br>
-          <span>Latest Deaths: {{item.deaths}}</span><br>
+          <span>Cumualtive Cases: {{item.cumulative_cases.toLocaleString()}}</span> <br>
+          <span>Cumualtive Deaths: {{item.cumulative_deaths.toLocaleString()}}</span> <br>
+          <span>Latest Cases: {{item.cases.toLocaleString()}}</span><br>
+          <span>Latest Deaths: {{item.deaths.toLocaleString()}}</span><br>
         </mat-card-content>
       </mat-card>
     </div>

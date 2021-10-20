@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
-  todayStats: any = {};
-  todayStatsFiltered: any = {};
+  todayStats: any;
+  todayStatsFiltered: any[] =[];
 
   constructor(
     private statsService: StatisticsService,
@@ -20,11 +20,12 @@ export class MainpageComponent implements OnInit {
  
 
   ngOnInit(): void {
-    let today = new Date();
-    this.statsService.getCovidStatsForDate(String(today.getDate() - 1).padStart(2, '0')+ "-" +  String(today.getMonth() + 1).padStart(2, '0') + "-" + today.getFullYear()).subscribe((resp: any) => {
-      this.todayStats = resp;
+    this.statsService.getLatestCovidStats().subscribe((resp: any) => {
+      this.todayStats = resp.summary;
       console.log(this.todayStats);
-      Object.assign(this.todayStatsFiltered,this.todayStats);
+      this.todayStats.forEach((element: any) => {
+        this.todayStatsFiltered.push(element);
+      });
     });
   }
 
@@ -32,10 +33,10 @@ export class MainpageComponent implements OnInit {
     console.log(event);
     console.log(item);
     if (event.checked) {
-      this.todayStatsFiltered.cases.push(item);
+      this.todayStatsFiltered.push(item);
     }
     else {
-      this.todayStatsFiltered.cases = this.todayStatsFiltered.cases.filter((obj: any) => {
+      this.todayStatsFiltered = this.todayStatsFiltered.filter((obj: any) => {
         console.log(obj.province, item.province)
         return obj.province !== item.province
       });
