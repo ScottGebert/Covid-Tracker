@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
+This is a province by province Covid-19 tracking app that allows user to view case data for each province. The site has basic stasitic filtering, in the future I hope too improve the 
+styling of the user interface as well as improving the statistic service to get news and vaccation data that can be displayed on the province dashboards. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

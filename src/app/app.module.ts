@@ -11,13 +11,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDividerModule} from '@angular/material/divider';
+import { ProvincePageComponent } from './province-page/province-page.component';
+import { FormBuilder  } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProvincePageComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule,
+    MatDividerModule,
+    MatCheckboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ const BASEURL = "https://api.opencovid.ca/";
 @Injectable({
   providedIn: 'root'
 })
-export class StatisiticsService {
+export class StatisticsService {
 
   constructor(
     private http: HttpClient,

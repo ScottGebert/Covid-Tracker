@@ -17,3 +17,20 @@
     background-color: mat.get-color-from-palette($primary-palette, 500);
   }
 }
+
+.Content {
+  max-width: 1000px;
+  margin: auto;
+  min-width: 360px;
+}
+
+.checkbox-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+// .checkbox {
+//   margin: 0 10px;
+// }
