@@ -2,8 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
-This is a province based Covid-19 tracking app that allows users to view case data for each location. The site has basic statistic filtering, in the future I hope to improve the 
-styling of the user interface as well as improving the statistical service to get news and vaccination data that can be displayed on the province dashboards. 
+
+This is a province based Covid-19 tracking app that allows users to view case data for each location. The site has basic filtering in the future. I hope to improve it to include dates. The site has a main dashboard for viewing each province's key metrics. Every province also has its own statistics page where more metrics can be viewed as well as the numbers broken up by health zone.
+
 
 Working on getting a domain for the site setup in the meantime you can view a little bit about it on Devpost at 
 
