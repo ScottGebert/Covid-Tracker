@@ -9,14 +9,16 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { ProvincePageComponent } from './province-page/province-page.component';
-import { FormBuilder  } from '@angular/forms';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatGridListModule} from '@angular/material/grid-list';
+
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppComponent,
     MainpageComponent,
     HeaderComponent,
-    ProvincePageComponent
+    ProvincePageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +41,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FlexLayoutModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatGridListModule
-    ],
+    MatGridListModule,
+    MatDatepickerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
