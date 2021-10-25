@@ -19,6 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FooterComponent } from './footer/footer.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { FooterComponent } from './footer/footer.component';
     MatCheckboxModule,
     MatGridListModule,
     MatDatepickerModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

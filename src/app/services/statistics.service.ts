@@ -65,7 +65,12 @@ export class StatisticsService {
     let toReturn: any = [];
     this.provinceHealthCodes[prov].forEach(code => {
       this.http.get(BASEURL + "summary?loc=" + code).subscribe((resp: any) => {
-        toReturn.push(resp.summary.at(0));
+        if (resp.summary[0]) {
+          toReturn.push(...resp.summary);
+        }
+        console.log("got zone", resp);
+      }, err => {
+        console.log("error getting for zone", err)
       });
     });
     return toReturn

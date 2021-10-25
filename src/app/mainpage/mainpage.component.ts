@@ -10,14 +10,15 @@ import { Router } from '@angular/router';
 })
 export class MainpageComponent implements OnInit {
   todayStats: any;
-  todayStatsFiltered: any[] =[];
+  todayStatsFiltered: any[] = [];
+  loaded: boolean = false;
 
   constructor(
     private statsService: StatisticsService,
     private router: Router
   ) { }
 
- 
+
 
   ngOnInit(): void {
     this.statsService.getLatestCovidStats().subscribe((resp: any) => {
@@ -25,6 +26,7 @@ export class MainpageComponent implements OnInit {
       console.log(this.todayStats);
       this.todayStats.forEach((element: any) => {
         this.todayStatsFiltered.push(element);
+        this.loaded = true;
       });
     });
   }
@@ -48,6 +50,13 @@ export class MainpageComponent implements OnInit {
   route(province: string) {
     console.log("fired");
     this.router.navigate(['province-page/' + province])
+  }
+
+  nullCheck(toCheck: String): String {
+    if (toCheck == "NULL")
+      return "No data";
+    else
+      return toCheck;
   }
 
 }
