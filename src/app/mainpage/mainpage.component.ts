@@ -18,37 +18,30 @@ export class MainpageComponent implements OnInit {
     private router: Router
   ) { }
 
-
-
   ngOnInit(): void {
     this.statsService.getLatestCovidStats().subscribe((resp: any) => {
       this.todayStats = resp.summary;
-      console.log(this.todayStats);
       this.todayStats.forEach((element: any) => {
         this.todayStatsFiltered.push(element);
         this.loaded = true;
+      }, (err: any) => {
+        console.error("ERROR grabbing stats", err);
       });
     });
   }
 
   checked(item: any, event: any) {
-    console.log(event);
-    console.log(item);
     if (event.checked) {
       this.todayStatsFiltered.push(item);
     }
     else {
       this.todayStatsFiltered = this.todayStatsFiltered.filter((obj: any) => {
-        console.log(obj.province, item.province)
         return obj.province !== item.province
       });
     }
-    console.log(this.todayStatsFiltered);
-    console.log(this.todayStats)
   }
 
   route(province: string) {
-    console.log("fired");
     this.router.navigate(['province-page/' + province])
   }
 

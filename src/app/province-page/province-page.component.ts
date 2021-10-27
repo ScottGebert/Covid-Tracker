@@ -24,10 +24,9 @@ export class ProvincePageComponent implements OnInit {
     this.province = this.router.url.substring(this.router.url.lastIndexOf("/") + 1, this.router.url.length).replace("%20", " ");
     this.provinceWideStats = this.statsService.getCovidStatsForProvince(this.province).subscribe(resp => {
       this.provinceWideStats = resp.summary[0];
-      console.log("Sucssses in province wide stats", resp);
       this.loaded = true;
     }, err => {
-      console.log('ERROR In Province wide stats', err);
+      console.error('ERROR In Province wide stats', err);
     });
     this.healthZoneStats = this.statsService.getCovidStatsForZones(this.province);
   }

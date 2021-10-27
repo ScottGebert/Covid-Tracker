@@ -42,9 +42,6 @@ export class StatisticsService {
     "Repatriated": [],
   }
 
-
-
-
   constructor(
     private http: HttpClient,
   ) { }
@@ -70,10 +67,9 @@ export class StatisticsService {
         }
         console.log("got zone", resp);
       }, err => {
-        console.log("error getting for zone", err)
+        console.error("ERROR getting for zone", err)
       });
     });
     return toReturn
   }
-
 }
